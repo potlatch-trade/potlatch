@@ -1,0 +1,4 @@
+*.gpg
+*.sha256
+*.log
+.DS_Store
