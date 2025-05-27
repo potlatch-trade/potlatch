@@ -1,6 +1,6 @@
 # Potlatch
 
-**Potlatch** is a decentralized, privacy-preserving protocol for real-world exchange. This repository serves as both the canonical archive for encrypted dispatches and the evolving development site for the protocol’s specification, logic, and tooling.
+**Potlatch** is a hybrid protocol enabling perfect strangers to anonymously trade in tangible goods. This repository serves as both the canonical archive for encrypted dispatches and the evolving development site for the protocol’s specification, logic, and tooling.
 
 ---
 
