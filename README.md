@@ -1,12 +1,12 @@
 # Potlatch
 
-**Potlatch** is a hybrid protocol enabling perfect strangers to anonymously transfer physical goods, without revealing identities, addresses, or transaction metadata. This repository serves as a canonical archive of encrypted dispatches and a living documentation site for the evolving protocol infrastructure.
+**Potlatch** is a hybrid protocol enabling perfect strangers to anonymously exchange physical goods, without revealing identities, addresses, or transaction metadata. This repository serves as a canonical archive of encrypted dispatches and a living documentation site for the evolving protocol infrastructure.
 
 This repository is **not** yet a showcase of open source code. It is a **living, partial archive**: a record of encrypted dispatches, signed hashes, and the intentional asymmetry between what is revealed and what remains hidden, a play between visibility and invisibility, private and public, social trust and coded trustlessness.
 
-Each commit documents a moment — a packet sent, a cipher seeded, a hash signed and distributed. The project’s form mirrors its politics: **iterative, trustless, and resistant to capture**. What you see here is only one surface of a broader system.
-
 The full protocol, infrastructure, and logic will emerge **piece by piece**, encoded first in practice — not proclamation. If you’d like to receive the encrypted dispatches and witness the unfolding as it happens:
+
+Each commit documents a moment — a packet sent, a cipher seeded, a hash signed and distributed. The project’s form mirrors its politics: **iterative, trustless, and resistant to capture**. What you see here is only one surface of a broader system.
 
 ➡️ **[Sign up at https://potlatchtrade.xyz](https://potlatchtrade.xyz)**
 
