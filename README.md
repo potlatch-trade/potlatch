@@ -2,7 +2,38 @@
 
 **Potlatch** is a hybrid protocol enabling perfect strangers to anonymously transfer physical goods, without revealing identities, addresses, or transaction metadata. This repository serves as a canonical archive of encrypted dispatches and a living documentation site for the evolving protocol infrastructure.
 
+This repository is **not** yet a showcase of open source code. It is a **living, partial archive**: a record of encrypted dispatches, signed hashes, and the intentional asymmetry between what is revealed and what remains hidden, a play between visibility and invisibility, private and public, social trust and coded trustlessness.
+
+Each commit documents a moment — a packet sent, a cipher seeded, a hash signed and distributed. The project’s form mirrors its politics: **iterative, trustless, and resistant to capture**. What you see here is only one surface of a broader system.
+
+The full protocol, infrastructure, and logic will emerge **piece by piece**, encoded first in practice — not proclamation. If you’d like to receive the encrypted dispatches and witness the unfolding as it happens:
+
+➡️ **[Sign up at https://potlatchtrade.xyz](https://potlatchtrade.xyz)**
+
 ---
+
+##  ~P Philosophy
+
+Potlatch is an experiment in anonymous, trust-minimized, real-world trade in physical goods.
+It rejects surveillance infrastructure and corporate logistics in favor of encrypted networks, local nodes, distributed physical protocols, bridges between physical world >
+
+---
+
+
+##  ~A Repository Structure
+
+```
+dispatches/
+  encrypted/     → Encrypted dispatch files (.asc format)
+
+keys/            → Public key (optional, unused in symmetric flow)
+protocol/        → Documentation and specifications for the Potlatch protocol
+src/             → Code for future cryptographic, routing, and escrow tooling
+docs/            → Glossary, changelog, and roadmap for Potlatch
+```
+
+---
+
 
 ## 🧾 Dispatches
 
@@ -26,12 +57,17 @@ gpg --pinentry-mode loopback --output 001-init.txt --decrypt 001-init.asc
 
 You will be prompted to enter the passphrase from the newsletter.
 
-Kleopatra users (Windows) can also:
+Windows users can decrypt Potlatch dispatches with the following method:
+- Download and install Gpg4win[https://gpg4win.org](https://gpg4win.org)
 - Download the `.asc` file
 - Double-click it to open in Kleopatra
 - Enter the passphrase and view the decrypted message
 
----
+
+MacOS Users can decrypt Potlatch dispatches with the following method:
+- Download and install GPG Suite [https://gpgtools.org](https://gpgtools.org)
+- Use **GPG Keychain** to import your key and decrypt `.asc` files
+- Double-click the encrypted file to decrypt with passphrase
 
 ### 🧪 To verify integrity and authenticity
 
@@ -61,34 +97,6 @@ https://github.com/potlatch-trade/potlatch/blob/main/keys/potlatch-pgp-public.as
 
 ---
 
-## 📁 Repository Structure
-
-```
-dispatches/
-  encrypted/     → Encrypted dispatch files (.asc format)
-
-keys/            → Public key (optional, unused in symmetric flow)
-protocol/        → Documentation and specifications for the Potlatch protocol
-src/             → Code for future cryptographic, routing, and escrow tooling
-docs/            → Glossary, changelog, and roadmap for Potlatch
-```
-
----
-
-## 📬 Subscribe
-
-To receive dispatches and their decryption keys, subscribe to:
-
-**[https://potlatchtrade.xyz](https://potlatchtrade.xyz)**
-
----
-
-## 🔐 Philosophy
-
-Potlatch is an experiment in anonymous, trust-minimized, real-world trade in physical goods.  
-It rejects surveillance infrastructure and corporate logistics in favor of encrypted networks, local nodes, distributed physical protocols, bridges between physical world and blockchain, blind and ZK verification mechanism, onion-style package routing.
-
----
 
 ## 🪪 Authorship & Integrity
 
