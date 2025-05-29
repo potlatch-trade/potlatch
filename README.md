@@ -14,26 +14,25 @@ Each commit documents a moment — a packet sent, a cipher seeded, a hash signed
 
 ##  ~P Philosophy
 
-Potlatch is an experiment in anonymous, trust-minimized, real-world trade in physical goods.
-It rejects surveillance infrastructure and corporate logistics in favor of encrypted networks, local nodes, distributed physical protocols, bridges between physical world >
+Potlatch is an experiment in anonymous, trust-minimized, real-world trade in physical goods.  
+It rejects surveillance infrastructure and corporate logistics in favor of encrypted networks, local nodes, distributed physical protocols, bridges between physical world and digital autonomy.
 
 ---
-
 
 ##  ~A Repository Structure
 
 ```
 dispatches/
-  encrypted/     → Encrypted dispatch files (.asc format)
+  encrypted/       → Encrypted dispatch files (.asc format)
+  signed-hashes/   → Signed SHA256 hash files (.sha256.asc)
 
-keys/            → Public key (optional, unused in symmetric flow)
-protocol/        → Documentation and specifications for the Potlatch protocol
-src/             → Code for future cryptographic, routing, and escrow tooling
-docs/            → Glossary, changelog, and roadmap for Potlatch
+keys/              → Public key (optional, unused in symmetric flow)
+protocol/          → Documentation and specifications for the Potlatch protocol
+src/               → Code for future cryptographic, routing, and escrow tooling
+docs/              → Glossary, changelog, and roadmap for Potlatch
 ```
 
 ---
-
 
 ## 🧾 Dispatches
 
@@ -47,7 +46,7 @@ Each dispatch is:
 
 ---
 
-### 🔐 To decrypt a dispatch
+### ~M to decrypt a dispatch
 
 Download the encrypted `.asc` file and decrypt with:
 
@@ -58,45 +57,53 @@ gpg --pinentry-mode loopback --output 001-init.txt --decrypt 001-init.asc
 You will be prompted to enter the passphrase from the newsletter.
 
 Windows users can decrypt Potlatch dispatches with the following method:
-- Download and install Gpg4win[https://gpg4win.org](https://gpg4win.org)
+- Download and install Gpg4win [https://gpg4win.org](https://gpg4win.org)
 - Download the `.asc` file
 - Double-click it to open in Kleopatra
 - Enter the passphrase and view the decrypted message
 
-
-MacOS Users can decrypt Potlatch dispatches with the following method:
+MacOS users can decrypt Potlatch dispatches with the following method:
 - Download and install GPG Suite [https://gpgtools.org](https://gpgtools.org)
 - Use **GPG Keychain** to import your key and decrypt `.asc` files
 - Double-click the encrypted file to decrypt with passphrase
 
+---
+
 ### 🧪 To verify integrity and authenticity
 
-1. Run:
+All signed SHA256 hashes are stored in [`dispatches/signed-hashes/`](dispatches/signed-hashes).  
+These are signed using GPG and correspond to encrypted files in `dispatches/encrypted/`.
+
+1. Download the encrypted file and the corresponding signed hash:
 
 ```bash
-sha256sum 001-init.asc
+curl -O https://github.com/potlatch-trade/potlatch/raw/main/dispatches/encrypted/001-init.asc
+curl -O https://github.com/potlatch-trade/potlatch/raw/main/dispatches/signed-hashes/001-init.sha256.asc
 ```
 
-2. Compare the result to the **signed SHA256 hash** block included in the dispatch email
+2. Import the Potlatch public key (if not already done):
 
-3. To verify the signature on the hash:
+```bash
+curl -O https://github.com/potlatch-trade/potlatch/raw/main/keys/potlatch-pubkey.asc
+gpg --import potlatch-pubkey.asc
+```
+
+3. Verify the signature on the signed hash:
 
 ```bash
 gpg --verify 001-init.sha256.asc
 ```
 
-You must first import the public key from:
+4. Check the actual hash value if you want to verify it manually:
 
+```bash
+sha256sum 001-init.asc
 ```
-https://github.com/potlatch-trade/potlatch/blob/main/keys/potlatch-pgp-public.asc
-```
+
+Compare it to the value shown inside the signed `.sha256.asc` file.  
+If the signature is valid and the hash matches, the dispatch is verified as authentic and untampered.
 
 ---
-
-> ✨ If the signature is valid and the hash matches, the dispatch is verified as authentic and untampered.
-
----
-
 
 ## 🪪 Authorship & Integrity
 
@@ -108,5 +115,3 @@ Authenticity is grounded in social trust and verifiable signed hashes.
 ## License
 
 [MIT License](LICENSE)
-
-
